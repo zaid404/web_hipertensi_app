@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Result{% endblock %}
+
+{% block content %}
+<h1>Diagnosis Result</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Detail</th>
+            <th>P(X|H) Ya</th>
+            <th>P(X|H) Tidak</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for calculation in detailed_calculations %}
+        <tr>
+            <td>{{ calculation.attribute }}</td>
+            <td>{{ calculation.p_x_h_ya }}</td>
+            <td>{{ calculation.p_x_h_tidak }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h2>Final Probabilities</h2>
+<p>P(X|Hasil=Ya) * P(Ya) = {{ final_prob_ya }}</p>
+<p>P(X|Hasil=Tidak) * P(Tidak) = {{ final_prob_tidak }}</p>
+
+<h2>Diagnosis</h2>
+<p>{{ diagnosis_result }}</p>
+
+<a href="/">Go back to diagnose again</a>
+
+{% endblock %}

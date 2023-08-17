@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Result{% endblock %}
+
+{% block content %}
+<h1>Diagnosis Result</h1>
+{% for calculation in formatted_calculations %}
+    <p>
+        {{ calculation.attribute }} P(X|H) Ya: {{ "%.9f"|format(calculation.p_x_h_ya) }} P(X|H) Tidak: {{ "%.9f"|format(calculation.p_x_h_tidak) }}
+    </p>
+{% endfor %}
+<p>p_x_h_ya = {{ "%.9f"|format(p_x_h_ya_product) }}</p>
+<p>p_x_h_tidak = {{ "%.9f"|format(p_x_h_tidak_product) }}</p>
+<p>P(X|Hasil=Ya) * P(Ya) = {{ "%.9f"|format(p_final_ya) }}</p>
+<p>P(X|Hasil=Tidak) * P(Tidak) = {{ "%.9f"|format(p_final_tidak) }}</p>
+<p>{{ diagnosis_result }}</p>
+<a href="/">Go back to diagnose again</a>
+{% endblock %}
