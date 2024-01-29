@@ -1,0 +1,6 @@
+pandas==1.3.5
+seaborn
+scikit-learn
+flask
+flask_bcrypt
+flask_wtf

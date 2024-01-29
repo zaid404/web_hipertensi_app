@@ -1,0 +1,15 @@
+{% extends "base2.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="style.css">
+<h1>Login Admin</h1>
+<form method="POST">
+    <label  id="labellogin" for="email">Email:</label>
+    <input type="email" name="email" required><br>
+    <label id="labellogin" for="password">Password:</label>
+    <input type="password" name="password" required><br>
+    <input type="submit" value="Login">
+</form>
+{% endblock %}

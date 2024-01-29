@@ -8,14 +8,28 @@
     {% for attribute_index in range(attribute_names|length) %}
     <div class="form-group">
         <label for="{{ attribute_names[attribute_index] }}">{{ attribute_names[attribute_index] }}</label>
-        <select class="form-control" name="selected_options">
-            <option value="">Select an option</option>
-            {% for option in options[attribute_index] %}
-                <option value="{{ attribute_names[attribute_index] }} {{ option }}">{{ option }}</option>
-            {% endfor %}
-        </select>
+        <label>{{ attribute_descriptions[attribute_names[attribute_index]] }}</label>
+
+		{% if attribute_names[attribute_index] == "apa aja di sini" %}
+			<select class="form-control" name="selected_options">
+				<option value="">Select an option</option>
+				{% for option in options[attribute_index] %}
+					<option value="{{ attribute_names[attribute_index] }} {{ option|int }}">{{ option|int }}</option>
+				{% endfor %}
+			</select>
+		{% else %}
+			<select class="form-control" name="selected_options">
+				<option value="">Select an option</option>
+				{% for option in options[attribute_index] %}
+					<option value="{{ attribute_names[attribute_index] }} {{ option }}">{{ option }}</option>
+				{% endfor %}
+			</select>
+		{% endif %}
+
     </div>
     {% endfor %}
     <button type="submit" class="btn btn-primary">Diagnose</button>
 </form>
+
+
 {% endblock %}

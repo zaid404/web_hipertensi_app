@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Tambah Admin</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <label for="nama">Nama:</label>
+        {{ form.nama(class="form-control") }}<br>
+        <label for="no_hp">No HP:</label>
+        {{ form.no_hp(class="form-control") }}<br>
+        <label for="email">Email:</label>
+        {{ form.email(class="form-control") }}<br>
+        <label for="password">Password:</label>
+        {{ form.password(class="form-control") }}<br>
+        <input type="submit" value="Tambah Admin">
+       
+    </form>
+{% endblock %}

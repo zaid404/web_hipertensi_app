@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}edit file{% endblock %}
+
+{% block content %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/handsontable@13.1.0/dist/handsontable.full.min.css'>  
+</head>
+
+<body>
+
+  <h1>{{file}}</h1>
+
+  {{description["sumary"]|safe}}
+   
+  <div id="grid" class="handsontable"></div>
+
+  <button id="save">Save</button>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://rawgit.com/notifyjs/notifyjs/master/dist/notify.js'></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
+
+  <script>
+    $(function () {
+      const settings = {
+        licenseKey: 'non-commercial-and-evaluation',
+        // ... other options
+      };
+
+      var data = {{data|tojson}};
+
+      var container = document.getElementById('grid'),
+        hot = new Handsontable(container, Object.assign({}, settings, {
+          data: data,
+          minSpareRows: 1,
+          colHeaders: true,
+          contextMenu: true
+      }));
+
+      $("#save").click( function() {
+        $.ajax({
+          url: "/save/{{file}}",
+          type: "POST", 
+          data: "data=" + JSON.stringify(hot.getData()),               
+          success: function (code_html, statut) { 
+            $.notify("Data saved");
+          },
+          error: function (resultat, statut, erreur) {
+            console.log(status);
+            console.log(erreur);
+            console.log(resultat);
+            $.notify("Save Error");
+          }
+        });
+      });
+    });
+  </script>
+{% endblock %}

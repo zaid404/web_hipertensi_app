@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Result{% endblock %}
+
+{% block content %}
+<style>
+    .highlight-green {
+        background-color: green;
+        color: white;
+        padding: 10px;
+    }
+</style>
+
+<h1>Diagnosis Result</h1>
+<table border="1">
+    <tr>
+        <th>Attribute</th>
+        <th>P(X|H) Ya</th>
+        <th>P(X|H) Tidak</th>
+    </tr>
+    {% for calculation in formatted_calculations %}
+    <tr>
+        <td>{{ calculation.attribute }}</td>
+        <td>{{ "%.9f"|format(calculation.p_x_h_ya) }}</td>
+        <td>{{ "%.9f"|format(calculation.p_x_h_tidak) }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<p>p_x_h_ya = {{ "%.9e"|format(p_x_h_ya_product) }}</p>
+<p>p_x_h_tidak = {{ "%.9e"|format(p_x_h_tidak_product) }}</p>
+
+{% set ptfinal = p_final_ya + p_final_tidak %}
+{% set perc_p_final_ya = ((p_final_ya / ptfinal) * 100) %}
+{% set perc_p_final_tidak = ((p_final_tidak / ptfinal) * 100) %}
+
+<p>P(X|Hasil=Ya) * P(Ya) = {{ "%.9e"|format(p_final_ya) }} dengan percentase {{ "%.2f"|format(perc_p_final_ya) }}%</p>
+<p>P(X|Hasil=Tidak) * P(Tidak) = {{ "%.9e"|format(p_final_tidak) }} dengan percentase {{ "%.2f"|format(perc_p_final_tidak) }}%</p>
+<p class="highlight-green">
+    {{ diagnosis_result }}
+</p>
+<a href="/solusiya">Check the solution</a>
+<a href="/">Go back to diagnose again</a>
+{% endblock %}

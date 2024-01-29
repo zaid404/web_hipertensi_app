@@ -1,0 +1,18 @@
+Attribute,Description
+male, :jenis kelamin pengamatan. Variabelnya adalah biner bernama male dalam kumpulan data.
+age, :Umur pada saat pemeriksaan kesehatan dalam tahun.
+education, :Variabel kategori pendidikan peserta dengan jenjang Sebagian SMA (1) sebagian SMA/GED (2) sebagian perguruan tinggi/SMK (3) perguruan tinggi (4)
+currentSmoker, :Merokok saat ini pada saat ujian
+cigsPerDay, :Jumlah rokok yang dihisap setiap hari
+BPMeds, :Penggunaan obat antihipertensi pada pemeriksaan
+prevalentStroke, :Prevalent Stroke (0 = bebas penyakit)x
+prevalentHyp, :Prevalen Hipertensi. Subjek didefinisikan sebagai hipertensi jika diobati
+diabetes, :Penderita diabetes menurut kriteria pemeriksaan pertama yang diobati
+totChol, :Kolesterol total (mg/dL)
+sysBP, :Tekanan Darah Sistolik (mmHg)
+diaBP, :Tekanan darah diastolik (mmHg)
+BMI, :Indeks Massa Tubuh berat badan (kg)/tinggi badan (m)^2
+heartRate, :Denyut jantung (detak/menit)
+glucose, :Kadar glukosa darah (mg/dL)
+TenYearCHD, :TenYearCHD : Risiko 10 tahun terkena penyakit jantung koroner (PJK).
+, :

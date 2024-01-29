@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<style>
+    .button-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    body {
+        background-image: url('https://images.ctfassets.net/nyc8uiobrqzx/7Mjs3LXvKLY7gZ4mGScssJ/6baefd1a83450f8ee51871dca0cdcc6a/hypertension_causes.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .black-box {
+        background-color: black;
+        color: white;
+        padding: 15px;
+    }
+    h1 {
+        font-size: 52px; /* Adjust the size according to your needs */
+    }
+    h2 {
+        font-size: 24px; /* Adjust the size according to your needs */
+    }
+    h3 {
+        font-size: 15px; /* Adjust the size according to your needs */
+    }
+    .button-container, .chart-container {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap; /* Menyusun elemen dalam baris baru jika tidak cukup ruang */
+    }
+
+    .chart-container {
+        width: 30%; /* Atur lebar sesuai kebutuhan */
+        margin: 20px auto; /* Sesuaikan margin untuk ruang */
+        margin-bottom: 20px; /* Tambahkan margin bawah untuk ruang di bawah setiap container */
+    }
+</style>
+
+<div class="chart-container">
+    <h2>Grafik Distribusi  Fiture </h2>
+    <img src="data:image/png;base64,{{ count_plot_html }}" alt="Count Plot Hypertension">
+</div>
+
+<div class="chart-container">
+    <h2>Histograms for Numerical Columns</h2>
+    {% for histogram in histograms_html %}
+        <h3>{{ histogram.column }}</h3>
+        <img src="data:image/png;base64,{{ histogram.html }}" alt="{{ histogram.column }}">
+    {% endfor %}
+</div>
+
+<div class="chart-container">
+    <h2>Heatmap for Correlation Matrix</h2>
+    <img src="data:image/png;base64,{{ heatmap_html }}" alt="Heatmap">
+</div>
+
+<div class="chart-container">
+    <h2>Pie Charts for Categorical Columns</h2>
+    {% for pie_chart in pie_charts_html %}
+        <h3>{{ pie_chart.column }}</h3>
+        <img src="data:image/png;base64,{{ pie_chart.html }}" alt="{{ pie_chart.column }}">
+    {% endfor %}
+</div>
+
+<div style="clear: both;"></div> {# Clear the floating elements #}
+{% endblock %}

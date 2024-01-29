@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<style>
+    .button-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    body {
+        background-image: url('https://images.ctfassets.net/nyc8uiobrqzx/7Mjs3LXvKLY7gZ4mGScssJ/6baefd1a83450f8ee51871dca0cdcc6a/hypertension_causes.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .black-box {
+        background-color: black;
+        color: white;
+        padding: 15px;
+    }
+    h1 {
+        font-size: 52px; /* Adjust the size according to your needs */
+    }
+    h2 {
+        font-size: 24px; /* Adjust the size according to your needs */
+    }
+    h3 {
+        font-size: 15px; /* Adjust the size according to your needs */
+    }
+    .button-container, .chart-container {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap; /* Menyusun elemen dalam baris baru jika tidak cukup ruang */
+    }
+
+    .chart-container {
+        width: 30%; /* Atur lebar sesuai kebutuhan */
+        margin: 20px auto; /* Sesuaikan margin untuk ruang */
+        margin-bottom: 20px; /* Tambahkan margin bawah untuk ruang di bawah setiap container */
+    }
+</style>
+
+<h1>Diagnosis Hipertensi</h1>
+<p><h2>Selamat datang di layanan diagnosa hipertensi. Berikut beberapa fitur yang disediakan:</h2></p>
+
+<div class="button-container">
+    <a href="/uji"><button>Uji Model</button></a>
+    <a href="/edit-data"><button>Data</button></a>
+    <!-- Add more buttons as needed -->
+
+    <a href="{{ url_for('add_admin_form') }}"><button>Tambah Admin</button></a>
+    <a href="/upload"><button>Upload Data Set</button></a>
+    <a href="/proses_data"><button>Proses Data Set</button></a>
+    <a href="/proses_diskrit"><button>Proses Data Set Diskrit</button></a>
+    <a href="/chart"><button>Grafik</button></a>
+</div>
+
+{% endblock %}
