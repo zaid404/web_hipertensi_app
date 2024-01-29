@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Daftar Admin</h1>
+    <table>
+        <tr>
+            <th>Nama</th>
+            <th>No HP</th>
+            <th>Email</th>
+        </tr>
+        {% for index, row in admin_data.iterrows() %}
+        <tr>
+            <td>{{ row['nama'] }}</td>
+            <td>{{ row['no_hp'] }}</td>
+            <td>{{ row['email'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('add_admin_form') }}"><button>Tambah Admin</button></a>
+    <a href="{{ url_for('logout') }}"><button>Log Out</button></a>
+
+{% endblock %}

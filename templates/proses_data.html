@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Processing</title>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+
+{% if process_message %}
+<script>
+  var processMessage = '{{ process_message }}';
+  if (processMessage === 'Data berhasil diproses') {
+    Swal.fire({
+      title: processMessage,
+      icon: 'success'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "/admin_fuc";
+      }
+    });
+  } else {
+    Swal.fire({
+      title: processMessage,
+      icon: 'error'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "/admin_fuc";
+      }
+    });
+  }
+</script>
+{% endif %}
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Uji{% endblock %}
+
+{% block content %}
+<style>
+    .button-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .black-box {
+        background-color: black;
+        color: white;
+        padding: 15px;
+    }
+    h1 {
+        font-size: 52px; /* Adjust the size according to your needs */
+    }
+    h2 {
+        font-size: 24px; /* Adjust the size according to your needs */
+    }
+    h3 {
+        font-size: 15px; /* Adjust the size according to your needs */
+    }
+    .button-container, .chart-container {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap; /* Menyusun elemen dalam baris baru jika tidak cukup ruang */
+    }
+
+    .chart-container {
+        width: 30%; /* Atur lebar sesuai kebutuhan */
+        margin: 20px auto; /* Sesuaikan margin untuk ruang */
+        margin-bottom: 20px; /* Tambahkan margin bawah untuk ruang di bawah setiap container */
+    }
+</style>
+
+    <!-- Input untuk memasukkan banyak data yang ingin diuji -->
+    <form action="" method="post">
+        <label for="banyakData">Pengujian dengan 20% data test </label>
+        
+        <input type="submit" value="Uji Model">
+    </form>
+    {% if total_samples is not none %}<h2>total samples</h2> <p>{{ total_samples }}</p> {% endif %}
+	{% if total_train is not none %}<h2>total data train  </h2> <p>{{ total_train }}</p> {% endif %}
+	{% if total_test is not none %}<h2>total data test  </h2>  <p>{{ total_test }}</p> {% endif %}
+
+    
+
+    {% if confusion_matrix_image_base641 is not none %}
+    <h2>Confusion Matrix </h2>
+    <img src="data:image/png;base64,{{ confusion_matrix_image_base641 }}" alt="Confusion Matrix 1">
+    {% endif %}
+
+	
+    {% if accuracy1 is not none %}
+    <h2>Accuracy  </h2>
+    <p>{{ accuracy1 }}%</p>
+    {% endif %}
+    {% if precision is not none %}
+    <h2>Precision (Positive Predictive Value) </h2>
+    <p>{{ precision }}</p>
+    {% endif %}
+
+    {% if recall is not none %}
+    <h2>Recall (Sensitivity or True Positive Rate)</h2>
+    <p>{{ recall   }}</p>
+    {% endif %}
+
+    {% if specificity is not none %}
+    <h2>Specificity (True Negative Rate)</h2>
+    <p>{{ specificity }}</p>
+    {% endif %}
+
+    {% if f1 is not none %}
+    <h2>F1 Score </h2>
+    <p>{{ f1 }}</p>
+    {% endif %}
+
+    {% if confusion_matrix_image_base642 is not none %}
+    <h2>Kurva ROC</h2>
+    <img src="data:image/png;base64,{{ confusion_matrix_image_base642 }}" alt="Confusion Matrix 2">
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %} View Data {% endblock %}
+
+{% block body %}
+
+<center>
+    <div id="container" >
+      <table>
+          <tr>
+              <th>Description</th>
+              <th></th>
+              <th> </th>
+              <th> </th>
+            </tr>
+    {% for dir in dirs %}
+    <tr>
+    
+          <td width="70%">
+              {{datas[dir]["subject"]}}
+            </td>
+            <td>
+        <b class="des title"><a href="/cek-data2/{{dir}}">{{dir}}</a>
+          
+        </td>
+        <td>
+            <a  href="/cek-data2/{{dir}}" title="edit csv" class="btn btn-default btn-sm"> <i class="glyphicon glyphicon-pencil text-primary"></i> </a>
+            </td>
+        <td>
+            <a href="/editdescription/{{dir}}" title="edit description/summary" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-cog" style="float:right;"></i></a>
+        </td>
+      
+    </tr>
+    {% endfor %}
+    </table>
+    </div>
+    </center>
+{% endblock %}

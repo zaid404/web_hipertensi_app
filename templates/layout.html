@@ -1,0 +1,128 @@
+<!doctype html>
+<head>
+    <title>{% block title %} {% endblock %}</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+
+    <script src='https://code.highcharts.com/stock/highstock.js'></script>
+    <script src='https://code.highcharts.com/stock/modules/exporting.js'></script>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    
+</head>
+<style>
+    body,html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+/* display: flex;*/
+/*  flex-direction: column; */s
+  align-items: center;
+  justify-content: center;
+  background: #F5F5F5;
+  font-family: 'Dosis', sans-serif;
+}
+main {
+  max-width: 100%;
+}
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: solid 1px #2196F3;
+  border-bottom: none;
+  padding: 1rem 2.4rem;
+  transition: all 0.2s;
+}
+.item:last-child {
+  border-bottom: solid 1px #2196F3;
+}
+.item:hover {
+  cursor: pointer;
+  background: #E0E0E0;
+}
+.item .right {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+.item span[class*="ion-"] {
+  padding: 0 1.4rem;
+  font-size: 2.7rem;
+  color: #2196F3;
+}
+.item .des {
+  padding: 0.5rem 0;
+}
+.item .comment {
+  max-width: 40vw;
+}
+.item .title {
+  font-size: 1.3rem;
+}
+@media (max-width: 400px) {
+  .item span[class*="ion-"] {
+    font-size: 1.4rem;
+  }
+}
+
+
+
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 0px; font-size: 17px; color: #8d8f90; font-weight: 400; line-height: 32px; background-color: #edefef; }
+h1, h2, h3, h4, h5, h6 { color: #25292a; margin: 0px 0px 10px 0px; font-family: 'Overpass', sans-serif; font-weight: 700; letter-spacing: -1px; line-height: 1; }
+h1 { font-size: 34px; }
+h2 { font-size: 28px; line-height: 38px; }
+h3 { font-size: 22px; line-height: 32px; }
+h4 { font-size: 20px; }
+h5 { font-size: 17px; }
+h6 { font-size: 12px; }
+p { margin: 0 0 20px; line-height: 1.7; }
+p:last-child { margin: 0px; }
+ul, ol { }
+a { text-decoration: none; color: #8d8f90; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
+a:focus, a:hover { text-decoration: none; color: #f85759; }
+
+
+
+.page-header {  
+  background: rgba(37,43,102,1);
+background: -moz-linear-gradient(left, rgba(37,43,102,1) 0%, rgba(75,78,105,1) 20%, rgba(4,2,43,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(37,43,102,1)), color-stop(20%, rgba(75,78,105,1)), color-stop(100%, rgba(4,2,43,1)));
+background: -webkit-linear-gradient(left, rgba(37,43,102,1) 0%, rgba(75,78,105,1) 20%, rgba(4,2,43,1) 100%);
+background: -o-linear-gradient(left, rgba(37,43,102,1) 0%, rgba(75,78,105,1) 20%, rgba(4,2,43,1) 100%);
+background: -ms-linear-gradient(left, rgba(37,43,102,1) 0%, rgba(75,78,105,1) 20%, rgba(4,2,43,1) 100%);
+background: linear-gradient(to right, rgba(37,43,102,1) 0%, rgba(75,78,105,1) 20%, rgba(4,2,43,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#252b66', endColorstr='#04022b', GradientType=1 );
+  position: relative; 
+margin : 0px 0 0px; 
+background-size: cover; }
+.page-caption { padding-top: 70px; padding-bottom: 74px; }
+.page-title { font-size: 46px; line-height: 1; color: #fff; font-weight: 600; text-align: center; }
+
+</style>
+<body>
+  <!-- page-header -->
+  <div class="page-header">
+      <div class="container">
+          <div class="row">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                  <div class="page-caption">
+                      <h1 class="page-title"><a href="/">EDIT DATA</a></h1>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- /.page-header-->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>

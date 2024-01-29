@@ -52,3 +52,11 @@ a {
     text-align: center;
     margin-top: 20px;
 }
+
+
+/* Mengatur lebar label agar tetap konsisten */
+#labellogin {
+    min-width: 100px;
+    text-align: right;
+    margin-right: 10px;
+}

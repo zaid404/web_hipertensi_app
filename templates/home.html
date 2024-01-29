@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<style>
+	.button-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    body {
+        background-image: url('https://images.ctfassets.net/nyc8uiobrqzx/7Mjs3LXvKLY7gZ4mGScssJ/6baefd1a83450f8ee51871dca0cdcc6a/hypertension_causes.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .black-box {
+        background-color: black;
+        color: white;
+        padding: 15px;
+    }
+    h1 {
+        font-size: 52px; /* Ubah ukuran sesuai kebutuhan Anda */
+    }
+	h2 {
+        font-size: 24px; /* Ubah ukuran sesuai kebutuhan Anda */
+    }
+	h3 {
+        font-size: 15px; /* Ubah ukuran sesuai kebutuhan Anda */
+    }
+</style>
+
+
+
+<div class="button-container">
+    <!--
+	
+	<a href="/cek-data"><button>Cek Data</button></a>	
+    <a href="/cek-data2"><button>Cek Data2</button></a> 
+	<a href="/edit-data"><button>edit-data</button></a>
+	<a href="/uji"><button>Uji Model</button></a>    
+	<a href="/proses_data"><button>proses_data</button></a>
+	<a href="{{ url_for('add_admin_form') }}"><button>Tambah Admin</button></a>
+	<a href="{{ url_for('logout') }}"><button>Log Out</button></a>
+	<a href="{{ url_for('admin_list') }}"><button>Lihat admin</button></a>
+	<a href="/upload"><button>upload</button></a>
+    <a href="/view_data"><button>view </button></a>
+    	<a href="/cek-data"><button>Cek Data</button></a>	
+        <a href="/cek-data2"><button>View Data</button></a> 	
+    -->
+	
+	<a href="/diagnosa"><button>Cek Hipertensi</button></a>	
+	
+
+    
+    
+	
+    <!-- coments -->
+	
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url('https://images.ctfassets.net/nyc8uiobrqzx/7Mjs3LXvKLY7gZ4mGScssJ/6baefd1a83450f8ee51871dca0cdcc6a/hypertension_causes.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            text-align: justify;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+    
+</head>
+<body>
+
+<div class="content-container">
+
+
+    <p>
+        Hipertensi merupakan suatu kondisi ketika tekanan darah sistolik ≥ 140 mmHg dan/atau diastolik ≥ 90 mmHg pada orang dewasa. Prevalensi hipertensi di Indonesia pada tahun 2018 berdasarkan Riskesdas setinggi 34.1% pada populasi dewasa. Kondisi hipertensi sendiri seringkali tidak disadari oleh penderita, diperkirakan 46% orang dewasa tidak menyadari kondisi ini, dan hipertensi juga masih menjadi penyebab utama kematian dini di seluruh dunia.
+    </p>
+
+    <p>
+        Faktor Resiko Penyebab Hipertensi:<br>
+        Ada banyak faktor risiko yang menyebabkan hipertensi, dan beberapa faktor risiko ini dapat dicegah, seperti kebiasaan merokok, diabetes, kelebihan berat badan atau obesitas, jarangnya melakukan aktivitas fisik, konsumsi garam berlebihan, serta konsumsi alkohol. Kondisi lain yang tidak dapat dicegah yang menjadi faktor risiko hipertensi juga seperti adanya riwayat keluarga hipertensi, usia tua > 65 tahun, serta ketika ada kondisi penyerta seperti penyakit ginjal.
+    </p>
+
+    <p>
+        Apakah ketika seseorang memiliki hipertensi langsung harus konsumsi obat? Tidak, seringkali ketika seseorang mengalami hipertensi, dokter akan menyarankan terlebih dahulu untuk dilakukan pola modifikasi gaya hidup sehat baik untuk pencegahan hipertensi serta untuk mendukung tata laksana hipertensi ketika sudah konsumsi obat. Modifikasi gaya hidup dengan rutin sendiri dapat mengurangi hingga 15% kejadian komplikasi pada hipertensi.
+    </p>
+</div>
+
+</body>
+</html>
+
+    
+    
+    
+	
+</div>
+{% endblock %}
