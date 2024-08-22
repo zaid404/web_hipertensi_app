@@ -1,6 +1,6 @@
-![alt text](https://github.com/zaen404/hypertension/blob/main/Screenshot_15.png?raw=true)
-![alt text](https://github.com/zaen404/hypertension/blob/main/prevhomet_14.png?raw=true)
-![alt text](https://github.com/zaen404/hypertension/blob/main/Screenshot_14.png?raw=true)
+![alt text](https://github.com/zaid404/hypertension/blob/main/Screenshot_15.png?raw=true)
+![alt text](https://github.com/zaid404/hypertension/blob/main/prevhomet_14.png?raw=true)
+![alt text](https://github.com/zaid404/hypertension/blob/main/Screenshot_14.png?raw=true)
 ini adalah sistem pakar menggunakan metode klasifikasi naive beyes berbasis web dengan flask.
 
 sistem ini di otomatis menyesuaikan  pembelajaran nya dengan data yang di upload sebagai dataset.
