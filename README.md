@@ -1,21 +1,47 @@
-![alt text](https://raw.githubusercontent.com/zaid404/web_hipertensi_app/main/Screenshot_15.png)
-![alt text](https://raw.githubusercontent.com/zaid404/web_hipertensi_app/main/prevhomet_14.png)
+# Expert System for Hypertension Classification Using the Naive Bayes Method
 
-ini adalah sistem pakar menggunakan metode klasifikasi naive beyes berbasis web dengan flask.
+![Screenshot 1](https://raw.githubusercontent.com/zaid404/web_hipertensi_app/main/Screenshot_15.png)
+![Screenshot 2](https://raw.githubusercontent.com/zaid404/web_hipertensi_app/main/prevhomet_14.png)
 
-sistem ini di otomatis menyesuaikan  pembelajaran nya dengan data yang di upload sebagai dataset.
+## Description
 
-baris terakhir di dataset.csv (Hypertension) merupakan class  klasifikasi penulisan pada table colom ini di batasi hannya pada 2 class "Hypertension" dan "normal"
-untuk kolom sebelum nya seharus nya sudah dapat menyesuaikan dengan dataset yang ingin di klasifikasikan.
+This is a web-based expert system that uses the **Naive Bayes** classification method. The system is built using the **Flask** framework and is designed to automate the learning process based on datasets uploaded by the user.
 
-sistem pakar ini juga dapat mengklasifikasikan data set lain dengan klass biner sayarat penggunaan nya adalah dengan meng upload dataset dan sesuikan penulisan seperti seblum nya pada kolom terkhir (kolom klass).
+### Key Features
+- **Automated Learning**: The system automatically adjusts its learning model based on the uploaded dataset.
+- **Binary Classification**: The last row in the dataset (`Hypertension`) is the classification column, limited to two classes: `Hypertension` and `Normal`.
+- **Dataset Flexibility**: Columns before the classification column can be adjusted to fit different types of datasets, as long as they meet the binary classification requirement and follow the same format for the last column.
 
-peper untuk sistem pakar ini akan segera menyusul dalam bentuk jurnal,berhubung ini adalah proyek untuk syarat kelulusan di jurusan ilmu komputer.
-Semoga Bermanfaaat :) trimakasih.
+### Additional Use Cases
+This expert system can also be used to classify other binary-class datasets. To use the system with a new dataset, upload the dataset and ensure that the last column follows the same format as described above.
 
-instalasi 
-pip install -r requirements.txt
-python app6.py
+### Additional Information from the Study
+Hypertension is often called the "silent killer" because it typically shows no symptoms. This study aims to help reduce the prevalence of hypertension in Indonesia by facilitating early detection and raising public awareness. Using the **Naïve Bayes** method combined with **data discretization** through the **CART (Classification and Regression Trees)** method, the dataset includes 11,627 medical records from 4,434 participants in the *Framingham Heart Study* (FHS), conducted by the *National Institutes of Health*. The system estimates the probability of hypertension occurrence based on input risk factors, achieving an accuracy of 84.28%.
 
+For more details, please refer to our journal publication: [DOI: https://doi.org/10.37396/jsc.v7i1.381](https://doi.org/10.37396/jsc.v7i1.381).
 
+### Journal
+A detailed journal explaining this expert system has been published. This project is part of the graduation requirements for the Computer Science department. We hope it is beneficial. Thank you!
 
+## Installation
+
+1. **Clone this repository:**
+   ```bash
+   git clone https://github.com/zaid404/web_hipertensi_app.git
+   ```
+2. **Navigate to the project directory:**
+   ```bash
+   cd web_hipertensi_app
+   ```
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. **Run the application:**
+   ```bash
+   python app6.py
+   ```
+
+## Contribution
+
+Contributions in the form of pull requests are highly welcome. Please make sure to `fork` this repository and create a new branch for any feature or fix before submitting a pull request.
