@@ -1,3 +1,8 @@
+sudo apt update
+sudo apt install python3.8 python3.8-venv -y
+python3.8 -m venv myenv38
+source myenv38/bin/activate
+pip install -r requirements.txt
 # Install dependencies
 apt-get install python3 python3-pip python3-dev build-essential libssl-dev libffi-dev python3-setuptools -y
 apt-get install python3-venv -y
@@ -12,7 +17,7 @@ systemctl enable nginx
 python3 -m venv venv
 source venv/bin/activate
 
-pip install requirements.txt
+
 pip install gunicorn
 pip install wheel
 pip install gunicorn flask
