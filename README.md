@@ -4,7 +4,7 @@
 ![Screenshot 2](https://raw.githubusercontent.com/zaid404/web_hipertensi_app/main/prevhomet_14.png)
 
 ## Description
-
+Use python 3.8 and pandas pandas==1.3.5 for mode see requirements.txt
 This is a web-based expert system that uses the **Naive Bayes** classification method. The system is built using the **Flask** framework and is designed to automate the learning process based on datasets uploaded by the user.
 
 ### Key Features
