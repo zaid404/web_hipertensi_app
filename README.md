@@ -42,7 +42,8 @@ A detailed journal explaining this expert system has been published. This projec
    python app6.py
    ```
 ## **simply just do:**
-```bash run2.sh
+```bash
+run2.sh
 ```
 ## Contribution
 
