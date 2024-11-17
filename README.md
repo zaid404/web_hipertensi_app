@@ -41,7 +41,9 @@ A detailed journal explaining this expert system has been published. This projec
    ```bash
    python app6.py
    ```
-## simply just do ```bash run2.sh```
+## **simply just do:**
+```bash run2.sh
+```
 ## Contribution
 
 Contributions in the form of pull requests are highly welcome. Please make sure to `fork` this repository and create a new branch for any feature or fix before submitting a pull request.
