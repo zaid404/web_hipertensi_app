@@ -1,4 +1,4 @@
-name: Run Shell Script
+name: Flask CI Workflow
 
 on:
   push:
@@ -9,14 +9,41 @@ on:
       - main
 
 jobs:
-  run_script:
-    runs-on: ubuntu-latest  # Or specify other OS if needed
+  build:
+    runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repository
-      - name: Checkout repository
+      # Checkout the code from the repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      # Run the shell script
-      - name: Run the shell script
-        run: ./run2.sh
+      # Set up Python 3.8 using deadsnakes PPA
+      - name: Add deadsnakes PPA and install Python 3.8
+        run: |
+          sudo add-apt-repository ppa:deadsnakes/ppa -y
+          sudo apt update
+          sudo apt install python3.8 python3.8-venv python3.8-dev -y
+
+      # Create and activate virtual environment
+      - name: Set up Python environment
+        run: |
+          python3.8 -m venv myenv38
+          source myenv38/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Run the Flask app script (app6.py)
+      - name: Run app script
+        run: |
+          source myenv38/bin/activate
+          nohup python app6.py &
+
+      # Sleep for 10 seconds to allow the app to start
+      - name: Sleep for 10 seconds
+        run: |
+          sleep 10
+
+      # Check if the Flask app is running on 0.0.0.0:5000
+      - name: Check if Flask app is running on port 5000
+        run: |
+          curl --silent --fail http://0.0.0.0:5000 || exit 1
